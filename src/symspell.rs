@@ -969,7 +969,7 @@ mod tests {
         assert_eq!(3, results[0].count);
 
         let typo = "whereis th elove hehad dated forImuch of thepast who couqdn'tread in sixthgrade and ins pired him";
-        let correction = "whereas the love head dated for much of the past who couldn't read in sixth grade and inspired him";
+        let correction = "whereas the love he had dated for much of the past who couldn't read in sixth grade and inspired him";
         let results = sym_spell.lookup_compound(typo, edit_distance_max);
         assert_eq!(1, results.len());
         assert_eq!(correction, results[0].term);
