@@ -19,6 +19,7 @@ let compound_suggestions = symspell.lookup_compound(sentence, 2);
 println!("{:?}", compound_suggestions);
 ```
 */
+extern crate triple_accel;
 extern crate strsim;
 #[macro_use]
 extern crate derive_builder;
@@ -44,6 +45,7 @@ mod symspell;
 mod wasm;
 
 #[cfg(not(target_arch = "wasm32"))]
+pub use edit_distance::DistanceAlgorithm;
 pub use string_strategy::AsciiStringStrategy;
 pub use string_strategy::{StringStrategy, UnicodeStringStrategy, UnicodeiStringStrategy};
 pub use suggestion::Suggestion;

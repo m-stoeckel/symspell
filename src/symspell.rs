@@ -52,7 +52,7 @@ pub struct SymSpell<T: StringStrategy> {
     bigrams: HashMap<Box<str>, i64>,
     #[builder(default = "i64::MAX", setter(skip))]
     bigram_min_count: i64,
-    #[builder(default = "DistanceAlgorithm::Damerau")]
+    #[builder(default = "DistanceAlgorithm::SIMD")]
     distance_algorithm: DistanceAlgorithm,
     #[builder(default = "T::new()", setter(skip))]
     string_strategy: T,
